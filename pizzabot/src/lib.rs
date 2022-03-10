@@ -148,7 +148,7 @@ impl Pizzabot {
         let mut current = first_word;
         while let Some(word) = self
             .words
-            .get(&current.to_ascii_lowercase())
+            .get(&current.to_lowercase())
             .and_then(ChoiceMap::choose)
         {
             current = word;
@@ -162,7 +162,7 @@ impl Pizzabot {
             if !Self::is_valid_end(current) {
                 if let Some(word) = self
                     .words
-                    .get(&current.to_ascii_lowercase())
+                    .get(&current.to_lowercase())
                     .and_then(ChoiceMap::choose)
                 {
                     current = word;
